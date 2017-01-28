@@ -66,7 +66,7 @@ class Request(object):
             raise exceptions.InvalidReceipt(response.status, response=response)
         return response
 
-    def verify(self, **options):
+    def verify(self, env, **options):
         """Try verification with current environment.
         If verify_ssl is true, Apple's SSL certificiate will be
         verified. The verify_ssl is set to false by default for
@@ -79,7 +79,6 @@ class Request(object):
         :return: :class:`itunesiap.receipt.Receipt` object if succeed.
         :raises: Otherwise raise a request exception.
         """
-        env = Environment.current()
         use_production = options.get('use_production', env.use_production)
         use_sandbox = options.get('use_sandbox', env.use_sandbox)
         verify_ssl = options.get('verify_ssl', env.verify_ssl)
