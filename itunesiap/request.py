@@ -5,7 +5,6 @@ import requests
 
 from . import receipt
 from . import exceptions
-from .environment import Environment
 
 RECEIPT_PRODUCTION_VALIDATION_URL = "https://buy.itunes.apple.com/verifyReceipt"
 RECEIPT_SANDBOX_VALIDATION_URL = "https://sandbox.itunes.apple.com/verifyReceipt"
